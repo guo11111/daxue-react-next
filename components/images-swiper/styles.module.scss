@@ -1,0 +1,107 @@
+@import 'styles/_base';
+
+.imgs-list{
+    position: relative;
+    width: 870px;
+    // height: 508px;
+    .imgs-item{
+        position: relative;
+        width: 870px;
+        height: 508px;
+        opacity: 0;
+        z-index: 1;
+        transition: all .5s linear;
+        .image{
+            position: absolute;
+            display: inline-block;
+            width: 870px;
+            height: 508px;
+        }
+
+        &.selected{
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+    .icon-btn{
+        display: none;
+        position: absolute;
+        z-index: 2;
+        width: 58px;
+        height: 58px;
+        opacity: 0.3;
+        border-radius: 50%;
+        background: #000000;
+        cursor: pointer;
+        &.prev-btn{
+            top: 275px;
+            left: 20px;
+            transform: translateY(-50%);
+            &::before{
+                position: absolute;
+                left: 23px;
+                top: 18px;
+                // transform: translate(-50%, -50%);
+                transform: rotate(45deg);
+                content: "";
+                display: inline-block;
+                width: 19px;
+                height: 19px;
+                border-left: 2px solid rgba(255, 255, 255, 0.5);
+                border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+        &.next-btn{
+            top: 275px;
+            right: 20px;
+            transform: translateY(-50%);
+            &::before{
+                position: absolute;
+                right: 23px;
+                top: 18px;
+                transform: rotate(45deg);
+                content: "";
+                display: inline-block;
+                width: 19px;
+                height: 19px;
+                border-right: 2px solid rgba(255, 255, 255, 0.5);
+                border-top: 2px solid rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+
+    &:hover{
+        .icon-btn{
+            display: block;
+        }
+    }
+}
+.index-list{
+    position: absolute;
+    top: 508px;
+    z-index: 3;
+    height: 10px;
+    bottom:40px;
+    // top: -16px;
+    // margin-top: -26px;
+    // margin-bottom: 16px;
+    transform: translateX(calc(435px - 50%));
+    text-align: center;
+    .index-item{
+        vertical-align: top;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 0 0 15px;
+        background-color: #e8e8e8;
+        border-radius: 5px;
+        cursor: pointer;
+        &:first-child{
+            margin-left: 0;
+        }
+        &.selected{
+            width: 17px;
+            background-color: #FF7415;
+        }
+    }
+}

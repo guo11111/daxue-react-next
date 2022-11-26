@@ -1,0 +1,47 @@
+$pageWidth: 1200px;
+$orange: #FF7415;
+$fontColor: #3a3a3a;
+$fontSize: 16px;
+
+%clearInputFocus{
+    &:focus{
+        outline: none;
+    }
+}
+
+%default-transition{
+    transition: all .1s linear;
+}
+
+%transition3{
+    transition: all .3s linear;
+}
+%transition2{
+    transition: all .2s linear;
+}
+
+%ellipsis{
+    overflow: hidden;
+    white-space: nowrap;// 文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+    text-overflow: ellipsis;
+}
+
+%line2-ellipsis{
+    width:100%;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+%clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}

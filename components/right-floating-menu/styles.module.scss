@@ -1,0 +1,292 @@
+@import '/styles/_base';
+
+.list{
+    position: fixed;
+    right: 3px;
+    bottom: 34px;
+    z-index: 3;
+    width: 60px;
+    padding: 0 7px;
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    opacity: 0;
+    .item{
+        // height: 69px;
+        font-size: 12px;
+        text-align: center;
+        color: #9b9b9b;
+        line-height: 15px;
+        border-bottom: 1px solid #e7e7e7;
+        cursor: pointer;
+        &:last-child{
+            border-bottom: 0;
+        }
+        .tip{
+            display: none;
+        }
+
+        &.download-app{
+            position: relative;
+            padding: 13px 0;
+            &::before{
+                content:"";
+                display: block;
+                height: 30px;
+                background: url("./img/download-app-icon.png") center no-repeat;
+                background-size: 20px 30px;
+                margin-bottom: 4px;
+            }
+
+            .img-tip{
+                display: none;
+                position: absolute;
+                left: -170px;
+                top: -40px;
+                width: 144px;
+                height: 170px;
+                padding: 10px 0 7px;
+                background: #ffffff;
+                border: 1px solid #e8e8e8;
+                &::after{
+                    position: absolute;
+                    right: -10px;
+                    top: 75px;
+                    content: "";
+                    display: inline-block;
+                    border-left: 10px solid #ffffff;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-right: 0;
+                }
+                &::before{
+                    position: absolute;
+                    right: -11px;
+                    top: 74px;
+                    content: "";
+                    display: inline-block;
+                    border-left: 11px solid #e8e8e8;
+                    border-top: 11px solid transparent;
+                    border-bottom: 11px solid transparent;
+                    border-right: 0;
+                }
+                .img{
+                    width: 128px;
+                    height: 128px;
+                }
+                .text{
+                    font-size: 14px;
+                    font-weight: 600;
+                    color:$fontColor;
+                    line-height: 20px;
+                }
+            }
+
+            &:hover{
+                &::before{
+                    background: url("./img/download-app-hover-icon.png") center no-repeat;
+                    background-size: 20px 30px;
+                }
+            }
+        }
+        &.hot-tel{
+            position: relative;
+            padding: 14px 0 8px;
+            &::before{
+                content:"";
+                display: block;
+                height: 32px;
+                background: url("./img/hot-tel-icon.png") center no-repeat;
+                background-size: 32px 32px;
+                margin-bottom: 4px;
+            }
+            .tel-tip{
+                display: none;
+                position: absolute;
+                left: -225px;
+                bottom: -85px;
+                width: 198px;
+                height: 256px;
+                padding: 10px 0 0 20px ;
+                background:$orange;
+                // border: 1px solid #e8e8e8;
+                text-align: left;
+                color: #ffffff;
+                .tel-tip-item {
+                    height: 78px;
+                    width: 160px;
+                    padding: 10px 0;
+                    .tel-tip-item-num {
+                        height: 41px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Semibold, PingFang SC;
+                        font-weight: 600;
+                        color: #FFFFFF;
+                        line-height: 20px;
+                    }
+                    .tel-tip-item-time {
+                        height: 17px;
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #FFFFFF;
+                        line-height: 17px;
+                    }
+                    &:nth-of-type(2) {
+                        border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+                        border-top: 1px dashed rgba(255, 255, 255, 0.5);
+                    }
+                }
+                // .tel-num{
+                //     font-family: Arial, Arial-Black sans-serif;
+                //     font-size: 18px;
+                //     font-weight: 900;
+                //     line-height: 26px;
+                //     padding-bottom: 6px;
+                // }
+                // .info{
+                //     font-size: 14px;
+                //     line-height: 20px;
+                // }
+
+                &::after{
+                    position: absolute;
+                    right: -10px;
+                    top: 120px;
+                    content: "";
+                    display: inline-block;
+                    border-left: 10px solid $orange;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-right: 0;
+                }
+            }
+
+            &:hover{
+                &::before{
+                    background: url("./img/hot-tel-hover-icon.png") center no-repeat;
+                    background-size: 32px 32px;
+                }
+            }
+        }
+        &.wx-fwh{
+            position: relative;
+            padding: 13px 0;
+            &::before{
+                content:"";
+                display: block;
+                height: 26px;
+                background: url("./img/wxfw-icon.png") center no-repeat;
+                background-size: 26px 26px;
+                margin-bottom: 4px;
+            }
+            .img-tip{
+                display: none;
+                position: absolute;
+                left: -170px;
+                bottom: 0;
+                width: 144px;
+                height: 170px;
+                padding: 10px 0 7px;
+                background: #ffffff;
+                border: 1px solid #e8e8e8;
+                &::after{
+                    position: absolute;
+                    right: -10px;
+                    bottom: 32px;
+                    content: "";
+                    display: inline-block;
+                    border-left: 10px solid #ffffff;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                    border-right: 0;
+                }
+                &::before{
+                    position: absolute;
+                    right: -11px;
+                    bottom: 31px;
+                    content: "";
+                    display: inline-block;
+                    border-left: 11px solid #e8e8e8;
+                    border-top: 11px solid transparent;
+                    border-bottom: 11px solid transparent;
+                    border-right: 0;
+                }
+                .img{
+                    width: 128px;
+                    height: 128px;
+                }
+                .text{
+                    font-size: 12px;
+                    font-weight: 600;
+                    color:$fontColor;
+                    line-height: 20px;
+                }
+            }
+            &:hover{
+                &::before{
+                    background: url("./img/wxfw-hover-icon.png") center no-repeat;
+                    background-size: 26px 26px;
+                }
+            }
+        }
+        @extend %default-transition;
+        &:hover{
+            color: #FF4A00;
+            .tip{
+                display: block;
+            }
+        }
+    }
+    .teacher-qrcode {
+        width: 110px;
+        height: 130px;
+        background: #FFFFFF;
+        border-radius: 11px;
+        border: 1px solid #E7E7E7;
+        position: absolute;
+        top: -150px;
+        // left: 0;
+        &__bg {
+            display: block;
+            width: 76px;
+            height: 66px;
+            position: absolute;
+            right: -61px;
+            bottom: 2px;
+            z-index: -1;
+        }
+        &__title {
+            padding: 5px 0 1px;
+            text-align: center;
+            font-family: Alibaba PuHuiTi 2.0-65 Medium, Alibaba PuHuiTi 20;
+            font-size: 12px;
+            line-height: 17px;
+            color: #333333;
+        }
+        &__img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        &__close-btn {
+            padding: 4px;
+            cursor: pointer;
+            position: absolute;
+            top: -4px;
+            right: -24px;
+            img {
+                display: block;
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
+
+// @media screen and (min-width: 1350px) {
+//     .list{
+//         right:10px;
+//     }
+// }

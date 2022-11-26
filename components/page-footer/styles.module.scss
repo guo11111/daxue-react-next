@@ -1,0 +1,144 @@
+@import "styles/_base";
+
+.link{
+    @extend %default-transition;
+    &:hover{
+        text-decoration: underline;
+        color: $orange;
+    }
+}
+.footer-wrap{
+    min-width: $pageWidth;
+    border-top: 2px solid $orange;
+    background-color: #ffffff;
+    padding-bottom: 36px;
+    // margin-top: 11px;
+}
+.links-wrap{
+    width: $pageWidth;
+    margin: 27px auto 0;
+    padding-bottom: 19px;
+    @extend %clearfix;
+
+    dl{
+        float: left;
+        dt{
+            margin-bottom: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 21px;
+            color:$fontColor;
+        }
+        dd{
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 19px;
+            color: $fontColor;
+        }
+    }
+    .links-list{
+        display: inline-block;
+        width: 218px;
+    }
+    .city-buy{
+        display: inline-block;
+        width: 328px;
+        dd{
+            display: inline-block;
+            margin: 0 16px 10px 0;
+        }
+    }
+}
+.friends-link-wrap{
+    // min-height: 60px;
+    min-width: $pageWidth;
+    padding: 20px 0;
+    background-color: rgba($color: #f2f3f7, $alpha: 0.5);
+    font-size: 14px;
+    line-height: 19px;
+    color: $fontColor;
+    text-align: center;
+    .links-list{
+        position: relative;
+        margin: 0 auto;
+        padding-left: 64px;
+        width: $pageWidth;
+        word-break: break-all;
+        text-align: left;
+
+        .title{
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            line-height: 19px;
+        }
+        .link{
+            margin-left: 12px;
+            display: inline-block;
+
+        }
+
+        &.hidden{
+            width: $pageWidth - 50px;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+    .show-more-btn{
+        vertical-align: top;
+        padding-left: 10px;
+        cursor: pointer;
+        font-size: 12px;
+        &::after{
+            content: "";
+            display: inline-block;
+            margin-left: 3px;
+            border-top: 4px solid;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 0;
+            height: 3px;
+        }
+        &:hover{
+            color: $orange;
+        }
+    }
+}
+
+.other-info{
+    width: $pageWidth;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 12px;
+    color: $fontColor;
+    .link{
+        margin: 0 8px;
+    }
+}
+.certification-Info{
+    width: $pageWidth;
+    margin: 10px auto 0;
+    text-align: center;
+    font-size: 12px;
+    color: #9E9EA0;
+    .link, .text{
+        margin: 2px;
+    }
+}
+
+.netSecurityCode{
+    display:inline-block;
+    text-decoration:none;
+    height:20px;
+    line-height:20px;
+    margin:0 5px;
+    &:hover{
+        text-decoration: underline;
+        color: #FF7415;
+    }
+    img{
+        vertical-align: text-bottom;
+        margin-right:2px;
+    }
+}

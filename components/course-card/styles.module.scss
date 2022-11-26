@@ -1,0 +1,154 @@
+@import 'styles/_base';
+
+.course-card{
+    float: left;
+    position: relative;
+    top: 0;
+    display: block;
+    width: 282px;
+    height: 292px;
+    padding: 25px 24px 20px;
+    background-color: #ffffff;
+    border-top: 2px solid $orange;
+    cursor: pointer;
+    @extend %default-transition;
+
+
+    .course-flag{
+        display: inline-block;
+        height: 25px;
+        padding: 0 14px;
+        background: #eaebf0;
+        border-radius: 0px 10px 0px 10px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 25px;
+    }
+    .course-info-wrap{
+        height: (17px + 7px + 42px);
+
+        .course-name{
+            position: relative;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 21px;
+            color: $fontColor;
+            // @extend %line2-ellipsis;
+            max-height: 42px;
+            word-break: break-all;
+            overflow: hidden;
+            // &.more-text{
+            //     &::after{
+            //         content: "...";
+            //         position: absolute;
+            //         bottom: 0;
+            //         right: 0;
+            //         padding-left: 30px;
+            //         padding-right: 10px;
+            //         background: -webkit-linear-gradient(left, transparent, #fff 55%);
+            //         background: -o-linear-gradient(right, transparent, #fff 55%);
+            //         background: -moz-linear-gradient(right, transparent, #fff 55%);
+            //         background: linear-gradient(to right, transparent, #fff 55%);
+            //     }
+            // }
+
+        }
+        .course-other-info{
+            margin-top: 7px;
+            font-size: 12px;
+            color: #9e9ea0;
+            line-height: 17px;
+            @extend %ellipsis;
+        }
+    }
+    .teacher-list{
+        margin-top: 17px;
+        padding-bottom: 18px;
+        height: 80px;
+        border-bottom: 1px solid #e8e8e8;
+        @extend %clearfix;
+        .teacher-item{
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+            .teacher-avatar{
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                border: 1px solid #e4e4e4;
+            }
+            .teacher-name{
+                width: 48px;
+                font-size: 12px;
+                font-weight: 400;
+                color: $fontColor;
+                line-height: 17px;
+                @extend %ellipsis;
+            }
+        }
+    }
+    .footer-wrap{
+        padding-top: 19px;
+        @extend %clearfix;
+        .buy-info{
+            float: left;
+            line-height: 26px;
+            font-size: 12px;
+            color: $fontColor;
+        }
+        .youHu-flag {
+            position: relative;
+            float: right;
+            padding: 2px 3px;
+            border-radius: 3px;
+            font-size: 12px;
+            color: #ffffff;
+            line-height: 12px;
+            height: 16px;
+            background-color: $orange;
+            vertical-align: top;
+            margin: 5px 8px 0 0;
+            &::after{
+                position: absolute;
+                right: -3px;
+                top: 5px;
+                content:"";
+                display: inline-block;
+                border-left: 3px solid $orange;
+                border-top: 3px solid transparent;
+                border-bottom: 3px solid transparent;
+                border-right: 0;
+            }
+        }
+        .origin-price{
+            float: right;
+            display: block;
+            padding-right: 5px;
+            padding-top: 8px;
+            font-size: 14px;
+            text-decoration:  line-through;
+            color: #9e9ea0;
+            line-height: 14px;
+        }
+        .price{
+            float: right;
+            line-height: 26px;
+            font-weight: 700;
+            font-size: 20px;
+            color: $orange;
+            .unit{
+                font-size: 12px;
+            }
+
+            &.fs22{
+                font-size: 22px;
+            }
+        }
+    }
+
+    &:hover{
+        top: -3px;
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.08);
+    }
+}

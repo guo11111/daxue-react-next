@@ -1,0 +1,583 @@
+@import "/styles/_base";
+$bigBGH: 868px;
+.top-hd-wrap {
+    position: relative;
+    min-width: $pageWidth;
+    &.hidden {
+        display: none;
+    }
+    .slide-down-wrap {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        @extend %transition2;
+        &.show {
+            height: $bigBGH;
+        }
+        // 阶段背景
+        @for $i from 1 through 2 {
+            &.bg#{$i} {
+                background: url("./img/down-bg#{$i}-12.jpg?imageMogr2/format/jpg")
+                    center
+                    no-repeat;
+                // background-size: 2560px 918px;
+                background-size: 2560px 100%;
+            }
+        }
+    }
+    .slide-up-wrap {
+        height: 100px;
+        opacity: 0;
+        display: none;
+        cursor: pointer;
+        @extend %transition2;
+        // 阶段背景
+        $bgColor: #721FCE, #F43C47;
+        @each $c in $bgColor {
+            $i: index($bgColor, $c);
+            &.bg#{$i} {
+                background: url("./img/up-bg#{$i}-12.png?imageMogr2/format/jpg")
+                    center
+                    no-repeat;
+                background-size: contain;
+                background-color: $c;
+            }
+        }
+        &-icon {
+            position: relative;
+            height: 100px;
+            width: 600px;
+            margin: 0 auto;
+            div {
+                position: absolute;
+                margin: auto 0;
+                right: 0;
+                top: 10px;
+                bottom: 0;
+                width: 28px;
+                height: 28px;
+                background-image: url("./img/dropdown-icon.png");
+            }
+        }
+    }
+    .show {
+        opacity: 1;
+        display: block;
+    }
+}
+
+.countdown-wrap {
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 35px;
+    margin: 0 auto;
+    font-size: 22px;
+    font-family: MicrosoftYaHeiSemibold, 微软雅黑, Microsoft YaHei;
+    font-weight: 400;
+    line-height: 35px;
+    color: #fff;
+    text-align: center;
+    @extend %transition2;
+
+    .number {
+        font-weight: 900;
+        color: #fcec6c;
+        padding: 0 5px;
+    }
+
+    &.lh30 {
+        top: -4px;
+        font-size: 12px;
+        line-height: 30px;
+        transform: translateX(-50%);
+        .number {
+            color: #fcec6c;
+        }
+    }
+}
+
+.hd-content {
+    position: relative;
+    height: $bigBGH;
+    width: 1130px;
+    margin: 0 auto;
+    .close-btn {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        height: 44px;
+        width: 44px;
+        background: url("./img/close-icon.png") no-repeat center;
+        background-size: 34px 34px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .view-rule-btn {
+        position: absolute;
+        top: 365px;
+        right: 25px;
+        height: 14px;
+        display: inline-block;
+        font-size: 14px;
+        font-family: PingFang SC;
+        font-weight: 500;
+        line-height: 14px;
+        text-align: center;
+        cursor: pointer;
+        z-index: 9;
+    }
+
+    .color0 {
+        color: #711E18;
+    }
+
+    .color1 {
+        color: #fff;
+    }
+
+    // $ruleColor: #711E18, #fff;
+    // @each $c in $ruleColor {
+    //     $i: index($ruleColor, $c); 
+    //     .color#{$i} {
+    //         color: $c;
+    //     }
+    // }
+
+    .info-wrap {
+        padding-top: 200px;
+        margin: 0 auto;
+        width: 1000px;
+        $h: 37px;
+        line-height: 39px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #802e18;
+        position: relative;
+        .buy-info {
+            margin-left: 185px;
+            display: inline-block;
+            width: 390px;
+            height: $h;
+            text-align: center;
+            .count {
+                color: #ee0a0a;
+            }
+        }
+        // .view-rule-btn {
+        //     position: absolute;
+        //     top: 346px;
+        //     right: 40px;
+        //     height: 37px;
+        //     width: 130px;
+        //     display: inline-block;
+        //     font-size: 20px;
+        //     font-family: PingFang SC;
+        //     font-weight: bold;
+        //     text-align: center;
+        //     color: #ffffff;
+        //     cursor: pointer;
+        //     background: url(./img/view-rule-btn3.png) no-repeat center;
+        //     background-size: 100% 100%;
+        // }
+        .view-rule-btn-line {
+            display: none;
+            position: absolute;
+            top: 16px;
+            right: 119px;
+            width: 6px;
+            height: 14px;
+            background: #f7d186;
+        }
+    }
+    .links-list-wrap {
+        margin: 200px auto 0;
+        width: 1440px;
+        height: 475px;
+        padding: 37px 20px 36px 0;
+        position: relative;
+        .links-item-wrap {
+            position: relative;
+            margin: 2px 0;
+            min-height: 49px;
+            display: flex;
+            align-items: center;
+            & > div {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            &:first-child {
+                margin-top: 0;
+            }
+            .sub-title-width {
+                width: 980px;
+            }
+            .title-wrap {
+                padding-top: 0;
+                padding-right: 0;
+                margin-right: 40px;
+                .title {
+                    font-size: 14px;
+                    font-weight: bold;
+                    font-family: 微软雅黑, Microsoft YaHei;
+                    color: #802B18;
+                    text-align: center;
+                    line-height: 20px;
+                    .flag {
+                        display: inline-block;
+                        line-height: 12px;
+                        font-size: 12px;
+                        color: #fff;
+                        padding: 2px 5px;
+                        margin-left: 7px;
+                        border-radius: 8px;
+                        background-color: #ff2a00;
+                        vertical-align: top;
+                    }
+                }
+            }
+
+            @for $i from 1 through 2 {
+                .arrow#{$i} {
+                    &::after {
+                        display: inline-block;
+                        content: "";
+                        width: 11px;
+                        height: 20px;
+                        background-image: url("./img/list-arrow#{$i}.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        position: relative;
+                        top: -8px;
+                        left: 26px;
+                    }
+                    .coupon {
+                        position: relative;
+                        margin-right: -11px;
+                        display: inline-block;
+                        // padding: 2px 5px 0;
+                        margin-top: 3px;
+                        color: #ffffff;
+                        line-height: 16px;
+                        width: 110px;
+                        height: 20px;
+                        overflow: hidden;
+                        text-align: center;
+                        min-height: 19px;
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            left: 0px;
+                            top: 0px;
+                            width: 10%;
+                            height: 100%;
+                            background: linear-gradient(
+                                to right,
+                                rgba(255, 255, 255, 0) 0,
+                                rgba(255, 255, 255, 0.3) 50%,
+                                rgba(255, 255, 255, 0) 100%
+                            );
+                            transform: skewX(-45deg);
+                            animation: twinkle 6s infinite;
+                        }
+                        .yellow {
+                            color: #ffe84c;
+                        }
+
+                        span {
+                            display: block;
+                            font-size: 12px;
+                            font-family: Microsoft YaHei, 微软雅黑, PingFang SC;
+                            font-weight: bold;
+                            font-style: italic;
+                            color: #FFFCC6;
+                        }
+                    }
+                    @for $i from 0 through 1 {
+                        @for $j from 0 through 5 {
+                            .coupon#{$i}#{$j} {
+                                background-size: contain;
+                                background: url("./img/coupon-icon#{$i}#{$j}.png")
+                                    center / contain
+                                    no-repeat;
+                            }
+                        }
+                    }
+                }
+            }
+            @for $i from 1 through 2 {
+                .title-wrap-top {
+                    &::after {
+                        display: inline-block;
+                        content: "";
+                        width: 11px;
+                        height: 20px;
+                        background-image: url("./img/list-arrow#{$i}.png");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        position: relative;
+                        // top: -16px;
+                        left: 26px;
+                    }
+                }
+            }
+            .sub-title-wrap {
+                &-content {
+                    display: inline-block;
+                    height: 41px;
+                    line-height: 37px;
+                    background-image: url("./img/button-content2.png");
+                    background-size: 100% 100%;
+                    vertical-align: top;
+                    font-size: 13px;
+                    font-family: 微软雅黑, Microsoft YaHei, PingFang SC;
+                    font-weight: bold;
+                    color: #A53017;
+                }
+                .sub-title-wrap-left {
+                    display: inline-block;
+                    height: 41px;
+                    width: 16px;
+                    background-image: url("./img/button-left2.png");
+                    background-size: 100% 100%;
+                    background-position: top right;
+                }
+                .sub-title-wrap-right {
+                    margin-right: 6px;
+                    display: inline-block;
+                    height: 41px;
+                    width: 16px;
+                    background-image: url("./img/button-right2.png");
+                    background-size: 100% 100%;
+                    background-position: top left;
+                }
+
+                @for $i from 1 through 2 {
+                    .sub-title#{$i} {
+                        position: relative;
+                        display: inline-block;
+                        height: 37px;
+                        line-height: 37px;
+                        margin-top: 10px;
+                        color: #fff;
+                        background-repeat: no-repeat;
+                        // background-size: 100% 100%;
+                        // background-image: url("./img/btn-bg.png");
+                        // background-position: center;
+                        border-radius: 6px;
+                        font-size: 14px;
+                        font-weight: 800;
+                        font-family: 微软雅黑, Microsoft YaHei;
+                        @extend %default-transition;
+
+                        .hot-icon {
+                            position: absolute;
+                            margin-left: -13px;
+                            left: 50%;
+                            top: -7px;
+                            display: inline-block;
+                            width: 25px;
+                            height: 10px;
+                            background: url("./img/hot-icon.png")
+                                center
+                                no-repeat;
+                            // background-size: 30px 14px;
+                            background-size: 100% 100%;
+                            animation: breathAn 5s infinite;
+                        }
+
+                        .new-icon {
+                            position: absolute;
+                            right: -4px;
+                            top: -12px;
+                            display: inline-block;
+                            width: 40px;
+                            height: 20px;
+                            background: url("./img/new-icon.png")
+                                center
+                                no-repeat;
+                            background-size: 40px 20px;
+                            animation: breathAn 5s infinite;
+                        }
+                        &:hover {
+                            .sub-title-wrap-content {
+                                background-image: url("./img/button-content2.png");
+                            }
+                            .sub-title-wrap-left {
+                                background-image: url("./img/button-left2.png");
+                            }
+                            .sub-title-wrap-right {
+                                background-image: url("./img/button-right2.png");
+                            }
+                        }
+                    }
+                }
+
+                // 阶段背景
+                $fontColor: #A53017, #A53017;
+                @each $c in $fontColor {
+                    $i: index($fontColor, $c);
+                    .color#{$i} {
+                        color: $c;
+                    }
+                }
+            }
+            .sub-title_lines {
+                margin-top: -3px;
+            }
+        }
+        @for $i from 1 through 6 {
+            .links-item-wrap:nth-child(#{$i}) {
+                padding-left: #{87 - $i * 12}px;
+            }
+        }
+        .links-item-wrap-top {
+            position: relative;
+            // margin-bottom: -8px;
+            // align-items: flex-start;
+        }
+    }
+}
+
+.hd-rule-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    &.hidden {
+        display: none;
+    }
+
+    .hd-rule-dialog {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 484px;
+        background: url("./img/rule-dialog-bg-12.png") no-repeat;
+        background-size: contain;
+        .close-btn {
+            position: absolute;
+            right: -58px;
+            top: -11px;
+            width: 35px;
+            height: 35px;
+            background-image: url("./img/rule-dialog-close-btn-11.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+        }
+        .dialog-body {
+            margin: 64px 20px 21px 35px;
+            padding-right: 11px;
+            overflow-y: auto;
+            height: 399px;
+            color: #A12D00;
+            font-family: Microsoft YaHei, 微软雅黑;
+            font-size: 14px;
+            line-height: 26px;
+
+            span {
+                font-weight: 400;
+            }
+
+            &::-webkit-scrollbar {
+                width: 9px;
+                height: 67px;
+                border-radius: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #DCB276;
+                border-radius: 6px;
+            }
+
+            .pt20 {
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        left: -10%;
+    }
+
+    50% {
+        left: -10%;
+    }
+
+    66.6% {
+        left: 100%;
+        transition: 1s ease;
+    }
+
+    67% {
+        left: -10%;
+    }
+
+    83.6% {
+        left: 100%;
+        transition: 1s ease;
+    }
+
+    83.7% {
+        left: -10%;
+    }
+
+    100% {
+        left: 100%;
+        transition: 1s ease;
+    }
+}
+
+@-webkit-keyframes breathAn {
+    0% {
+        transform: scale(0.8);
+    }
+    25% {
+        transform: scale(1);
+        transform: skewX(0);
+    }
+    31% {
+        transform: skewX(13deg);
+    }
+    37% {
+        transform: skewX(0);
+    }
+    43% {
+        transform: skewX(-13deg);
+    }
+    49% {
+        transform: skewX(0);
+        transform: scale(1);
+    }
+    55% {
+        transform: scale(1.1);
+    }
+    65% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    85% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}

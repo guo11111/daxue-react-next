@@ -1,0 +1,104 @@
+@import 'styles/_base';
+
+.list{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 80px;
+    background: #ffffff;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0;
+    transition: left .2s linear;
+
+    &.fixed{
+        position: fixed;
+    }
+
+    .item{
+        position: relative;
+        height: 52px;
+        font-size: 12px;
+        text-align: center;
+        color: $fontColor;
+        line-height: 16px;
+        vertical-align:middle;
+        width: 80px;
+        @extend %default-transition;
+
+        .text{
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            padding: 0 1px;
+        }
+
+        &:first-child{
+            border-radius: 3px 3px 0 0;
+        }
+
+        &::after{
+            position: absolute;
+            bottom: 0px;
+            left: 10px;
+            content: "";
+            display: inline-block;
+            width: 60px;
+            height: 1px;
+            background-color: #f2f3f7;
+        }
+
+        &.selected{
+            color: $orange;
+        }
+        &:hover{
+            background-color: $orange;
+            color: #ffffff;
+            &::after{
+                background-color:transparent;
+            }
+        }
+    }
+    .goto-top{
+        padding-top: 17px;
+        height: 72px;
+        font-size: 12px;
+        text-align: center;
+        color: $orange;
+        line-height: 16px;
+
+        &::before{
+            content:"";
+            display: block;
+            height: 13px;
+            background: url("./img/goto-top-icon.png") center no-repeat;
+            background-size: 23px 13px;
+            margin-bottom: 9px;
+        }
+        @for $i from 1 through 2 {
+            &.bg#{$i}{
+                position: relative;
+                &::after{
+                    content: "";
+                    display: block;
+                    width: 80px;
+                    height: 72px;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: url("./img/goto-top#{$i}-icon-12.png") center no-repeat;
+                    background-size: 80px 72px;
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                }
+                &::before{
+                    display: none;
+                }
+            }
+        }
+    }
+}

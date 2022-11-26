@@ -1,0 +1,82 @@
+@import 'styles/_base';
+
+.public-class-wrap{
+    position: relative;
+    width: $pageWidth;
+    margin: 35px auto 0;
+}
+
+.title-wrap{
+    position: relative;
+    .title{
+        display: inline-block;
+        font-size: 22px;
+        font-weight: 700;
+        text-align: left;
+        color: $fontColor;
+        line-height: 26px;
+    }
+    .sub-titles-wrap{
+        display: inline-block;
+        margin-left: 15px;
+        vertical-align: top;
+        .link{
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 12px;
+            text-align: left;
+            color: #727272;
+            line-height: 16px;
+            cursor: pointer;
+            @extend %default-transition;
+            &.selected, &:hover{
+                color: $orange;
+                font-weight: 700;
+                position: relative;
+                &::after{
+                    position: absolute;
+                    bottom: -4px;
+                    left: 50%;
+                    margin-left: -5px;
+                    content: "";
+                    width: 10px;
+                    height: 2px;
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+    .more-link{
+        position: absolute;
+        right: 0;
+        font-size: 12px;
+        text-align: left;
+        color: #343434;
+        line-height: 16px;
+    }
+}
+
+.course-card-list{
+    // position: absolute;
+    // left: 0;
+    // top: 42px;
+    // width: 100%;
+    display: none;
+    opacity: 0;
+    z-index: 0;
+    margin-top: 16px;
+    @extend %clearfix;
+    @extend %transition2;
+    .course-card-item{
+        margin: 0 24px 24px 0;
+        &:nth-child(4n+0){
+            margin-right: 0;
+        }
+    }
+
+    &.selected{
+        display: block;
+        opacity: 1;
+        z-index: 1;
+    }
+}

@@ -1,0 +1,168 @@
+@import "styles/_base";
+// !!! 弹层样式表文件：styles/banner-menus-children.css(与首页管理后台manage-cms.koolearn.com公用)
+.banner-wrap {
+    margin: 20px auto 0;
+    width: $pageWidth;
+    height: 730px;
+    // height: 562px;
+    background-color: #ffffff;
+    border: 1px solid rgba(221, 222, 226, 0.75);
+    @extend %clearfix;
+}
+.left-menus-list {
+    float: left;
+    width: 282px;
+    height: 100%;
+    display: block;
+    padding: 16px 0 16px 11px;
+    .left-menus-item {
+        $itemHeight: 54px;
+        position: relative;
+        min-height: $itemHeight;
+        padding: 8px 0 0 13px;
+
+        .menu-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: $fontColor;
+            line-height: 16px;
+            .title-link {
+                &:hover {
+                    color: $orange;
+                }
+            }
+            .title-tag {
+                margin-left: 10px;
+                padding: 0 5px;
+                vertical-align: top;
+                height: 16px;
+                background: $orange;
+                border-radius: 2px;
+                font-size: 12px;
+                color: #ffffff;
+                line-height: 16px;
+            }
+        }
+        .sub-titles {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #727272;
+            line-height: 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            .sub-title {
+                display: inline-block;
+                margin-right: 15px;
+                cursor: pointer;
+                @extend %default-transition;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &:hover {
+                    color: $orange;
+                    text-decoration: underline;
+                }
+            }
+        }
+        // 浮层详情
+        .children-wrap {
+            position: absolute;
+            // top: 15px;
+            right: -917px;
+            width: 918px;
+            min-height: 720px;
+            visibility: hidden;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+        }
+        // 下划线
+        &:before {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            content: "";
+            display: block;
+            width: 258px;
+            height: 1px;
+            background: #f2f3f7;
+        }
+        &:last-child {
+            &::before {
+                visibility: hidden;
+            }
+        }
+        // 融为一体，隐藏浮层边
+        &::after {
+            visibility: hidden;
+            position: absolute;
+            right: 1px;
+            top: 1px;
+            z-index: 10;
+            display: block;
+            content: "";
+            height: $itemHeight - 1px;
+            width: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        // 对其顶部
+        @for $i from 1 to 15 {
+            &:nth-child(#{$i}) {
+                .children-wrap {
+                    top: (($i - 1) * $itemHeight * -1) - 17px;
+                }
+            }
+        }
+        @extend %transition2;
+        // 悬浮
+        &:hover {
+            z-index: 99;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+            .children-wrap {
+                visibility: visible;
+            }
+            &::before {
+                visibility: hidden;
+            }
+            &::after {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.swiper-imgs-wrap {
+    position: relative;
+    float: left;
+    // vertical-align: top;
+    display: block;
+    padding: 24px 23px;
+    width: 914px;
+    // height: 508px;
+}
+.advertising_container {
+    position: relative;
+    top:508px;
+    padding: 0px 23px 24px 23px;
+    width: 914px;
+    height: 150px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    .advertising-left {
+        width: 423px;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        cursor: pointer;
+    }
+    .advertising-right {
+        width: 423px;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        cursor: pointer;
+    }
+}
