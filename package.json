@@ -19,6 +19,7 @@
         "next": "10.0.3",
         "next-compose-plugins": "^2.2.1",
         "next-optimized-images": "^2.6.2",
+        "postcss-pxtorem": "^5.1.1",
         "pubsub-js": "^1.9.2",
         "querystring": "^0.2.0",
         "react": "17.0.1",

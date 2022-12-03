@@ -66,7 +66,11 @@ function Home({
                     name="description"
                     content="新东方大学考试官网是由新东方集团全资创办官方网校，依托强大的新东方师资力量与教学资源，为大学生提供考研考博、英语提升、四六级、雅思、托福、日语、韩语、教资在线网课。"
                 />
-
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+                >
+                </meta>
                 {isProduction &&
                 <>
                     <script dangerouslySetInnerHTML={{

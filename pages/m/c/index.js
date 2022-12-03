@@ -7,10 +7,13 @@ import PublicClass from 'components/public-class';
 import HotCourse from 'components/hot-course';
 import PageFooter from 'components/page-footer';
 import RightFloatingMenu from 'components/right-floating-menu';
+
+import HeadCom from '@/components/m/head';
 import {
     getHeaderMenusData, getBannersData, getTypesData, getPublicClassData, getHotCourseData, getAdvertCurrent
 } from 'services/base';
 import styles from 'styles/Home.module.scss';
+import stylCss from './Aaaaaa.module.scss';
 
 function Notice() {
     return (
@@ -45,7 +48,8 @@ export default function Home() {
             </Head>
             <Notice />
             <Header />
-            <p className={styles.test}>你好啊</p>
+            <HeadCom />
+            <p className={stylCss.test}>你好啊</p>
             <Banner
                 menus={menus}
                 banners={banners}
@@ -124,6 +128,7 @@ async function getProps() {
         props: {
             menus,
             banners,
+            HeadCom,
             publicClassTypes: aShowPublicClassTypes,
             publicClasses: aShowPublicClasses,
             hotCourseTypes: aShowHotCourseTypes,

@@ -45,7 +45,6 @@ export default function Home() {
             </Head>
             <Notice />
             <Header />
-            <p className={styles.test}>你好啊</p>
             <Banner
                 menus={menus}
                 banners={banners}
